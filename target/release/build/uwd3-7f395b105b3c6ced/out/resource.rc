@@ -1,0 +1,25 @@
+#pragma code_page(65001)
+1 VERSIONINFO
+FILEOS 0x40004
+FILETYPE 0x1
+FILEVERSION 1, 0, 0, 0
+FILESUBTYPE 0x0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK 0x3f
+FILEFLAGS 0x0
+{
+BLOCK "StringFileInfo"
+{
+BLOCK "000004b0"
+{
+VALUE "ProductVersion", "1.0.0"
+VALUE "FileVersion", "1.0.0"
+VALUE "ProductName", "uwd3"
+VALUE "FileDescription", "uwd3"
+}
+}
+BLOCK "VarFileInfo" {
+VALUE "Translation", 0x0, 0x04b0
+}
+}
+

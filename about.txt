@@ -1,5 +1,9 @@
-Universal Watermark Disabler 2 ("UWD2") v{}
-Created by: Melody https://machineonamission.me/
-Source code, project info, and FAQs: https://github.com/machineonamission/uwd2
-Inspiration for this project: Universal Watermark Disabler by Painter701: https://github.com/pr701/universal-watermark-disabler
+Universal Watermark Disabler 3 ("UWD3") v{}
+Based on UWD2 by Melody https://machineonamission.me/
+Source: https://github.com/machineonamission/uwd2
 Written in Rust
+
+Improvements over UWD2:
+  - Multi-pattern binary scan (resilient to compiler prologue changes)
+  - Structural GDI-call scan (finds the watermark function with zero cached state)
+  - install-task subcommand for automatic re-patching on logon

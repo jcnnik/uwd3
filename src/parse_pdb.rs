@@ -10,14 +10,11 @@ pub fn parse_pdb(pdbfile: Vec<u8>) -> u32 {
     for symbol in symbol_table.iter().iterator().flatten() {
         let data = symbol.parse().unwrap();
         if let pdb::SymbolData::Public(d) = data {
-            // i'd be surprised if there's any false positives here and i dont want to get cocky with name unmangling
             if d.name.to_string().contains("s_DesktopBuildPaint") && d.function {
-                // dbg!(d);
                 let rva = d.offset.to_rva(&address_map).unwrap();
-                // dbg!(rva);
                 return rva.0;
             }
         }
     }
-    panic!("ermmm what the derp... (cant find symbol in pdb)");
+    panic!("Cannot find CDesktopWatermark::s_DesktopBuildPaint in PDB");
 }
