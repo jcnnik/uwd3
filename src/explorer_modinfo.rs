@@ -35,7 +35,8 @@ pub unsafe fn get_explorer_handle() -> HANDLE {
             .values()
             .find(|proc| {
                 if let Some(p) = proc.exe() {
-                    p == Path::new(r"C:\Windows\explorer.exe")
+                    p.to_string_lossy()
+                        .eq_ignore_ascii_case(r"C:\Windows\explorer.exe")
                 } else {
                     false
                 }
